@@ -1,16 +1,16 @@
-#include<Servo.h> //бібліотека для сервомотора
+#include<Servo.h> //library for servo motor
 
 #define S0 2
 #define S1 3
 #define S2 4
 #define S3 5
-#define sensorOut 6 //контакти до яких підключено датчик
+#define sensorOut 6 //contacts to which the sensor is connected
 
 int frequency = 0;
 int color=0;
 
-Servo servodown;//оголошуємо зміну типу Servo
-Servo servoup;//оголошуємо зміну типу Servo
+Servo servodown;//we announce a change of Servo type
+Servo servoup;//we announce a change of Servo type
 
 void setup() {
 pinMode(S0, OUTPUT);
@@ -18,44 +18,44 @@ pinMode(S1, OUTPUT);
 pinMode(S2, OUTPUT);
 pinMode(S3, OUTPUT);
 pinMode(sensorOut, INPUT);
-// Встановлення масштабування частоти на 20%
+// Setting frequency scaling to 20%
 digitalWrite(S0, HIGH);
 digitalWrite(S1, LOW);
-servodown.attach(8);//контакт сервомотора
-servoup.attach(9);//контакт сервомотора
+servodown.attach(8);//servo motor contact
+servoup.attach(9);//servo motor contact
 Serial.begin(9600);
 }
 
 int readColor() {
-// Встановлення червоних фотодіодів для зчитування
+// Installation of red photodiodes for reading
 digitalWrite(S2, LOW);
 digitalWrite(S3, LOW);
-// Зчитування вихідної- частоти
+// Reading of the output frequency
 frequency = pulseIn(sensorOut, LOW);
 int R = frequency;
-// Друк значення на послідовному моніторі
+// Print the value on the serial monitor
 Serial.print("R= ");
 Serial.print(frequency);
 Serial.print("  ");
 delay(50);
-// Встановлення зелених фотодіодів для зчитування
+// Installation of green photodiodes for reading
 digitalWrite(S2, HIGH);
 digitalWrite(S3, HIGH);
-// Зчитування вихідної- частоти
+// Reading of the output frequency
 frequency = pulseIn(sensorOut, LOW);
 int G = frequency;
-// Друк значення на послідовному моніторі
+// Print the value on the serial monitor
 Serial.print("G= ");
 Serial.print(frequency);
 Serial.print("  ");
 delay(50);
-// Встановлення синіх фотодіодів для зчитування
+// Installation of blue photodiodes for reading
 digitalWrite(S2, LOW);
 digitalWrite(S3, HIGH);
-// Зчитування вихідної- частоти
+// Reading of the output frequency
 frequency = pulseIn(sensorOut, LOW);
 int B = frequency;
-// рук значення на послідовному моніторі
+// printing the value on the serial monitor
 Serial.print("B= ");
 Serial.print(frequency);
 Serial.println("  ");

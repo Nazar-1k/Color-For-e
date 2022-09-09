@@ -16,8 +16,7 @@ We place M&M's of different colors in ColorForce. These dragees fall into a spec
 We will use the TCS230 color sensor to read the colors. The TCS230 microcircuit converts the intensity of the color spectrum into a signal of different frequencies. The intensity of the color spectrum is inversely proportional to the frequency of the output signal.
 
 
-![image](https://user-images.githubusercontent.com/82716260/189423112-872ec05f-d6d4-4606-abbb-3f5690bcdc83.png) 
-Color sensor TCS230
+![image](https://user-images.githubusercontent.com/82716260/189423112-872ec05f-d6d4-4606-abbb-3f5690bcdc83.png) Color sensor TCS230
 
 # Photo of the device
 ![IMG_20210220_203801](https://user-images.githubusercontent.com/82716260/189418528-f475b217-5773-4537-b9f3-107d666d276e.jpg)
